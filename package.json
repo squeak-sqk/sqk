@@ -1,0 +1,48 @@
+{
+  "name": "@ratnia/sqk",
+  "version": "0.4.0",
+  "description": "SQK: A high-performance TypeScript-based package manager",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "sqk": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "install-cmd": "node dist/index.js install",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "Ratnia <gutecjug@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^5.8.3",
+    "@swc/core": "^1.7.26",
+    "commander": "^12.1.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "ts-node": "^10.9.2"
+  },
+  "keywords": [
+    "package-manager",
+    "typescript",
+    "sqk",
+    "npm",
+    "yarn",
+    "pnpm"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ratnia/sqk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/<ratnia/sqk/issues"
+  },
+  "homepage": "https://github.com/ratnia/sqk#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}
