@@ -1,17 +1,26 @@
-import { program } from 'commander';
-import { installDependencies } from './installer';
+import * as fs from 'fs/promises';
+import * as path from 'path';
+import { DependencyResolver } from './resolver';
+import { Installer } from './installer';
+import { LockfileManager } from './lockefile';
+import { PackageJson } from './types';
 
-program
-  .command('install')
-  .description('Install dependencies for the project')
-  .action(async () => {
-    try {
-      await installDependencies();
-      console.log('Dependencies installed successfully.');
-    } catch (error: unknown) {
-      const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
-      console.error('Installation error:', errorMessage);
-    }
-  });
+async function main() {
+  const command = process.argv[2];
+  const projectPath = process.cwd();
+  if (command === 'install') {
+    const pkgJsonPath = path.join(projectPath, 'package.json');
+    const pkgJson = JSON.parse(await fs.readFile(pkgJsonPath, 'utf-8')) as PackageJson;
+    const resolver = new DependencyResolver();
+    const lockfile = await resolver.resolveDependencies(pkgJson);
+    const lockfileManager = new LockfileManager(projectPath);
+    await lockfileManager.save(lockfile);
+    const installer = new Installer();
+    await installer.install(lockfile, projectPath);
+    console.log('Installation complete!');
+  } else {
+    console.log('Usage: hyperpack install');
+  }
+}
 
-program.parse(process.argv);
+main().catch(console.error);

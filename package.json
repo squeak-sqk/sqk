@@ -1,5 +1,5 @@
 {
-  "name": "@ratnia/sqk",
+  "name": "sqk",
   "version": "0.4.0",
   "description": "SQK: A high-performance TypeScript-based package manager",
   "main": "dist/index.js",
@@ -17,10 +17,11 @@
   "author": "Ratnia <gutecjug@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "typescript": "^5.8.3",
+    "@ratnia/sqk": "^0.4.0",
     "@swc/core": "^1.7.26",
     "commander": "^12.1.0",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
     "@types/node": "^22.7.4",
