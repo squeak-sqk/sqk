@@ -6,7 +6,7 @@ A high-performance package manager written in TypeScript, designed to be faster 
 
 Install globally via npm:
 ```bash
-npm install -g @ratnia/sqk
+npm install @ratnia/sqk -g
 ```
 
 
