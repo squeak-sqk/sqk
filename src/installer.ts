@@ -6,9 +6,14 @@ import { fetchPackageTarball } from './fetcher';
 export class PackageStore {
   private storePath: string;
 
-  constructor(storePath: string = path.join(process.env.HOME || '', '.hyperpack', 'store')) {
-    this.storePath = storePath;
+  constructor(storePath?: string) {
+    const home =
+      process.env.HOME ||
+      process.env.USERPROFILE || // Windows fallback
+      process.cwd();
+    this.storePath = storePath || path.join(home, '.hyperpack', 'store');
   }
+
   async savePackage(metadata: PackageMetadata, tarball: Buffer): Promise<string> {
     const packagePath = path.join(this.storePath, `${metadata.name}-${metadata.version}`);
     await fs.mkdir(packagePath, { recursive: true });
@@ -16,6 +21,7 @@ export class PackageStore {
     await fs.writeFile(tarballPath, tarball);
     return packagePath;
   }
+
   async getPackagePath(name: string, version: string): Promise<string | null> {
     const packagePath = path.join(this.storePath, `${name}-${version}`);
     try {

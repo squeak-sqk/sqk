@@ -5,7 +5,7 @@ export class DependencyResolver {
   private resolved: Map<string, PackageMetadata> = new Map();
   private lockfile: Lockfile = { version: '1.0.0', packages: {} };
 
-  async resolveDependencies(pkg: PackageJson, isRoot: boolean = true): Promise<Lockfile> {
+  async resolveDependencies(pkg: PackageJson): Promise<Lockfile> {
     const queue: Array<{ name: string; versionRange: string }> = [];
     
     // Initialize with root package dependencies

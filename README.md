@@ -1,4 +1,8 @@
-# SQK Package Manager
+<p align="center">
+    <img src="assets/logo.png" >
+</p>
+
+
 
 A high-performance package manager written in TypeScript, designed to be faster than npm, Yarn, and PNPM. SQK installs dependencies from the npm registry, caches them locally for speed, and generates a lockfile for consistency.
 
@@ -9,6 +13,6 @@ Install globally via npm:
 npm install @ratnia/sqk -g
 ```
 
+[npm](https://www.npmjs.com/package/sqk)
 
-# last info
-is on work and still need be fixed so sorry if not work TwT
+by @Ratnia
