@@ -28,6 +28,12 @@
     "@types/semver": "^7.7.0",
     "ts-node": "^10.9.2"
   },
+  "contributors": [
+    {
+      "name": "Ratnia",
+      "email": "gutecjug@gmail.com"
+    }
+  ],
   "keywords": [
     "package-manager",
     "typescript",
