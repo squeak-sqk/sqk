@@ -14,7 +14,8 @@
     "dev": "tsc --watch",
     "prepublishOnly": "npm run build"
   },
-  "author": "Ratnia <gutecjug@gmail.com>",
+  "author": "sqk",
+  "private": false,
   "license": "MIT",
   "dependencies": {
     "@ratnia/sqk": "^0.4.0",
