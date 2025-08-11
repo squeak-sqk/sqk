@@ -1,3 +1,4 @@
 * text eol=lf
 
-*.tgz binaryw
+*.tgz binary
+*.png binary

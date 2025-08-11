@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="sqk.png" />
+    <img src="assets/sqk.png" />
 </p>
 
 
