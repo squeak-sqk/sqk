@@ -1,0 +1,11 @@
+newPRwelcome:
+  title: "Welcome to the New PR!"
+  body: |
+    Thank you for your contribution! Please ensure that your pull request adheres to the following guidelines:
+
+    - [ ] Ensure that your code follows the project's coding standards.
+    - [ ] Write clear and concise commit messages.
+    - [ ] Include tests for any new features or bug fixes.
+    - [ ] Update documentation if necessary.
+
+    We appreciate your effort in making this project better! If you have any questions, feel free to ask in the discussion section.
