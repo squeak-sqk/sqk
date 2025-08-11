@@ -48,9 +48,9 @@
     "url": "git+https://github.com/ratnia/sqk.git"
   },
   "bugs": {
-    "url": "https://github.com/<ratnia/sqk/issues"
+    "url": "https://github.com/squeak-sqk/sqk/issues"
   },
-  "homepage": "https://github.com/ratnia/sqk#readme",
+  "homepage": "",
   "publishConfig": {
     "access": "public"
   }
